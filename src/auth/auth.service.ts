@@ -73,7 +73,7 @@ export class AuthService {
       },
     });
 
-    if (!user) {
+    if (!user || !user.hashedRefreshToken) {
       throw new ForbiddenException('Access Denied');
     }
 
